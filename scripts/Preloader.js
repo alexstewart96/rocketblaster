@@ -33,7 +33,7 @@ BasicGame.Preloader.prototype = {
 
 	update: function () {
 
-   This.game.state.start('MainMenu');
+   this.game.state.start('MainMenu');
 	}
 
 };
