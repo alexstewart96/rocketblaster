@@ -9,7 +9,8 @@ BasicGame.Preloader.prototype = {
 	preload: function () {
       //displays a loading screen message while the assets are loaded into memory
 			this.preloaderText = this.add.text(this.world.centerX, this.world.centerY, 'loading...',
-		{fontsize: '96px',
+		{
+			fontsize: '96px',
 		fill: '#fff',
 		align: 'center'
 	});
