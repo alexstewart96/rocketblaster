@@ -1,4 +1,6 @@
-BasicGame.Game = function (game) {};
+var BasicGame = {};
+
+BasicGame.Game = function (Game) {};
 
 
 
@@ -122,7 +124,7 @@ BasicGame.Game = function (game) {};
  this.gameOver();
  }
  else execute;
-'createUfo','createLife','moveShip','collisionDetection'; 
+'createUfo','createLife','moveShip','collisionDetection';
 function execute () {
  this.createUfo();
  this.createLife();
@@ -163,7 +165,7 @@ function execute () {
  //Generating a random velocity
  ufo.body.velocity.y = this.rnd.integer.InRange(200, 300);
  }
- 
+ }
  //function executed during playing the game to create a Life
   function createLife () {
  //Generate random number between 0 and 500
@@ -253,4 +255,5 @@ function restartGame () {
  this.game.debug.bodyInfo(ship, 32, 100);
  this.game.debug.spriteBounds(ship);
  }
- };
+ }
+ }
