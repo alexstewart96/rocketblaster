@@ -29,6 +29,6 @@ startButton.anchor.setTo(0.5,0.5);
 	startGame: function () {
 		//and start the actual game
 		this.game.state.start('Game');
-     }
+     },
 
 };
