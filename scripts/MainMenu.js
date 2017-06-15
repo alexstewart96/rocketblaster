@@ -1,4 +1,4 @@
-var BasicGame = {};
+
 
 BasicGame.MainMenu = function (game) { };
 
