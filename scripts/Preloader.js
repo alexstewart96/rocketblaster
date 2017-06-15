@@ -45,9 +45,9 @@ this.load.spritesheet('lifeAnimation', 'assets/lifeAnimation.png',100, 100, 4);
  // it's best to wait for it to decode here first, then carry on.
  // If you don't have any music in your game then put the game.state.start line into the create function and delete
  // the update function completely.
- if (this.cache.isSoundDecoded('music') && this.ready == false) {
+ if (this.cache.isSoundDecoded('music') && this.ready === false) {
  this.ready = true;
    this.game.state.start('MainMenu');
 	}
 
-};
+}};
