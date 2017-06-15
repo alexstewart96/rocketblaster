@@ -250,5 +250,5 @@ function updateTimer () {
 function restartGame () {
  this.game.state.start('Game');
  }
- }
+ 
  }
