@@ -87,7 +87,7 @@ BasicGame.Game = function (game) {};
  timer = this.time.create(false);
  seconds = 0;
  timerText.text = 'Time: ' + seconds;
- game.Over.Text = this.add.text(this.world.centerX, this.world.centerY-50 ')' ;'Game Over', 
+ game.Over.Text = this.add.text,(this.world.centerX, this.world.centeY-50 );'Game Over', 
  {
  font: '96px arial',
  fill: '#fff',
@@ -121,15 +121,14 @@ BasicGame.Game = function (game) {};
  if (lifeTotal < 1 || seconds == 60 || gameOver===true) {
  this.gameOver();
  }
- else execute
-'createUfo','createLife','moveShip','collisionDetection' 
-function execute ()
- this.createUfo()
+ else execute;
+'createUfo','createLife','moveShip','collisionDetection'; 
+function execute () {
+ this.createUfo();
  this.createLife();
  this.moveShip();
  this.collisionDetection();
  }
- },
  //moves ship and fires bullet from keyboard controls
  function moveship () {
  //if left arrow key pressed move players ship left
@@ -149,7 +148,7 @@ function execute ()
  if (this.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR)) {
  this.fireBullet();
  }
- },
+ }
  //function executed during playing the game to create a UFO
  function createUfo () {
  //Generate random number between 0 and 20
@@ -162,26 +161,25 @@ function execute ()
  var createufo = ufos.create(randomX, -50, 'ufo');
  this.physics.enable(ufo, Phaser.Physics.ARCADE);
  //Generating a random velocity
- ufo.body.velocity.y = this.rnd.integerInRange(200, 300);
+ ufo.body.velocity.y = this.rnd.integer.InRange(200, 300);
  }
- },
+ 
  //function executed during playing the game to create a Life
- createLife: function () {
+  function createLife () {
  //Generate random number between 0 and 500
  var random = this.rnd.integerInRange(0, 500);
  //if random number equals 0 then create a life in a random x position
  if (random === 0) {
  //Generating random position in the X Axis
  var randomX = this.rnd.integerInRange(0, this.world.width - 150);
- //Creating a ufo from the the ufos group and setting physics
  var life = lives.create(randomX, -50, 'life');
  this.physics.enable(life, Phaser.Physics.ARCADE);
  //Generating a random velocity
  life.body.velocity.y = 150;
  }
- },
+ }
  //Generate bullet and position in the x axis, set the velocity and play the audio
- fireBullet: function () {
+ function fireBullet () {
  if (this.time.now > nextFire && bullets.countDead() > 0) {
  nextFire = this.time.now + fireRate;
  var bullet = bullets.getFirstExists(false);
@@ -189,15 +187,15 @@ function execute ()
  bullet.body.velocity.y = -400;
  bulletAudio.play();
  }
- },
+ }
  //function executed during playing the game to check for collisions
- collisionDetection: function () {
+  function collisionDetection() {
  this.physics.arcade.overlap(ship, ufos, this.collideUfo, null, this);
  this.physics.arcade.overlap(ship, lives, this.collectLife, null, this);
  this.physics.arcade.overlap(bullets, ufos, this.destroyUfo, null,this);
- },
+ }
  //function executed if there is collision between player and ufo. UFO is destroyed, animation & sound, reduce lifeTotal
- collideUfo: function (ship,ufo) {
+ function collideUfo (ship,ufo) {
  explosionAudio.play();
  ufo.kill();
  var animation = this.add.sprite(ufo.body.x, ufo.body.y, 'kaboom');
@@ -207,9 +205,9 @@ function execute ()
  lifeTotalText.text = 'Lives: ' + lifeTotal;
  //
  gameOver=true;
- },
+ }
  //function executed if there is collision between ufo and bullet. UFO is destroyed, animation & sound, increase score
- destroyUfo: function (bullet, ufo) {
+ function destroyUfo (bullet, ufo) {
  explosionAudio.play();
  ufo.kill();
  bullet.kill();
@@ -218,24 +216,24 @@ function execute ()
  animation.animations.play('explode', 30, false, true);
  score += 100;
  scoreText.text = 'Score: ' + score;
- },
+ }
  //function executed if there is collision between player and life.
-Life is destroyed, animation & sound, increase lifeTotal
- collectLife: function (ship, life) {
+//Life is destroyed, animation & sound, increase lifeTotal
+ function collectLife (ship, life) {
  life.kill();
  lifeTotal++;
  lifeTotalText.text = 'Lives: ' + lifeTotal;
  var animation = this.add.sprite(life.body.x, life.body.y, 'lifeAnimation');
  animation.animations.add('lifeAnimation');
  animation.animations.play('lifeAnimation', 30, false, true);
- },
+ }
  //Updates timer and outputs to the screen
- updateTimer: function () {
+function updateTimer () {
  seconds++;
  timerText.text = 'Time: ' + seconds;
- },
+ }
  //function is executed when the game ends. Stops Ship, Kills all objects, stops timer, Display Restart Button
- gameOver: function () {
+ function gameOver () {
  ship.body.velocity.x = 0;
  ship.body.x = (this.world.width/2)-(ship.body.width/2);
  ufos.callAll('kill');
@@ -245,12 +243,12 @@ Life is destroyed, animation & sound, increase lifeTotal
  gameOverText.visible = true;
  restartButton.visible = true;
  timer.stop();
- },
+ }
  //Restart function, executed when restart button is pressed
- restartGame: function () {
+function restartGame () {
  this.game.state.start('Game');
- },
- render: function() {
+ }
+ function render() {
  // Sprite debug info
  this.game.debug.bodyInfo(ship, 32, 100);
  this.game.debug.spriteBounds(ship);
