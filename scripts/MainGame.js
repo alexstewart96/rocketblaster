@@ -36,7 +36,7 @@ BasicGame.Game = function (game) {};
  //Adding the starfield, logo onto the screen
  this.starfield = this.add.tileSprite(0, 0, 800, 600, 'starfield');
  //Adding the ship onto the screen, set the physics and the boundarys
- ship = this.add.sprite((this.world.width / 2), this.world.height -, 'ship');
+ ship = this.add.sprite((this.world.width / 2), this.world.height -ship, '');
  ship.anchor.setTo(0.5,0);
  this.physics.enable(ship, Phaser.Physics.ARCADE);
  ship.body.collideWorldBounds = true;
@@ -87,11 +87,12 @@ BasicGame.Game = function (game) {};
  timer = this.time.create(false);
  seconds = 0;
  timerText.text = 'Time: ' + seconds;
- gameOverText = this.add.text(this.world.centerX, this.world.center Y-50, 'Game Over', {
+ game.Over.Text = this.add.text(this.world.centerX, this.world.centerY-50 ')' ;'Game Over', 
+ {
  font: '96px arial',
  fill: '#fff',
  align: 'center'
- });
+ };
  gameOverText.anchor.set(0.5);
  //hides the gameState text
  gameOverText.visible = false;
@@ -120,17 +121,17 @@ BasicGame.Game = function (game) {};
  if (lifeTotal < 1 || seconds == 60 || gameOver===true) {
  this.gameOver();
  }
- //else execute
-'createUfo','createLife','moveShip','collisionDetection' function
- else {
- this.createUfo();
+ else execute
+'createUfo','createLife','moveShip','collisionDetection' 
+function execute ()
+ this.createUfo()
  this.createLife();
  this.moveShip();
  this.collisionDetection();
  }
  },
  //moves ship and fires bullet from keyboard controls
- moveShip: function () {
+ function moveship () {
  //if left arrow key pressed move players ship left
  if (cursors.left.isDown) {
  // Move to the left
@@ -150,7 +151,7 @@ BasicGame.Game = function (game) {};
  }
  },
  //function executed during playing the game to create a UFO
- createUfo: function () {
+ function createUfo () {
  //Generate random number between 0 and 20
  var random = this.rnd.integerInRange(0, 20);
  //if random number equals 0 then create a ufo in a random xposition and random y velocity
@@ -158,7 +159,7 @@ BasicGame.Game = function (game) {};
  //Generating random position in the X Axis
  var randomX = this.rnd.integerInRange(0, this.world.width - 150);
  //Creating a ufo from the the ufos group and setting physics
- var ufo = ufos.create(randomX, -50, 'ufo');
+ var createufo = ufos.create(randomX, -50, 'ufo');
  this.physics.enable(ufo, Phaser.Physics.ARCADE);
  //Generating a random velocity
  ufo.body.velocity.y = this.rnd.integerInRange(200, 300);
