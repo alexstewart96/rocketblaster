@@ -250,10 +250,5 @@ function updateTimer () {
 function restartGame () {
  this.game.state.start('Game');
  }
- function render() {
- // Sprite debug info
- this.game.debug.bodyInfo(ship, 32, 100);
- this.game.debug.spriteBounds(ship);
- }
  }
  }
