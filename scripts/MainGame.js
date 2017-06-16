@@ -125,7 +125,7 @@ BasicGame.Game = function (Game) {};
  }
  else execute;
 'createUfo','createLife','moveShip','collisionDetection';
- execute: function () {
+ execute: function (); {
  this.createUfo();
  this.createLife();
  this.moveShip();
