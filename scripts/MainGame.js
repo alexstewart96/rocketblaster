@@ -123,9 +123,8 @@ BasicGame.Game = function (Game) {};
  if (lifeTotal < 1 || seconds == 60 || gameOver===true) {
  this.gameOver();
  }
- else execute;
-'createUfo','createLife','moveShip','collisionDetection';
- execute: function ; {
+ //else execute;'createUfo','createLife','moveShip','collisionDetection';
+ else  {
  this.createUfo();
  this.createLife();
  this.moveShip();
@@ -163,7 +162,7 @@ BasicGame.Game = function (Game) {};
  var createufo = ufos.create(randomX, -50, 'ufo');
  this.physics.enable(ufo, Phaser.Physics.ARCADE);
  //Generating a random velocity
- ufo.body.velocity.y = this.rnd.integer.InRange(200, 300);
+ ufo.body.velocity.y = this.rnd.integerInRange(200, 300);
  }
  }
  //function executed during playing the game to create a Life
