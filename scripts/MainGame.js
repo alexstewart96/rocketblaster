@@ -39,7 +39,7 @@ BasicGame.Game = function (Game) {};
  //Adding the starfield, logo onto the screen
  this.starfield = this.add.tileSprite(0, 0, 800, 600, 'starfield');
  //Adding the ship onto the screen, set the physics and the boundarys
- ship = this.add.sprite((this.world.width / 2), this.world.height - 50, 'ship' '');
+ ship = this.add.sprite((this.world.width / 2), this.world.height - 50, 'ship');
  ship.anchor.setTo(0.5,0);
  this.physics.enable(ship, Phaser.Physics.ARCADE);
  ship.body.collideWorldBounds = true;
