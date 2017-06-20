@@ -130,11 +130,22 @@ BasicGame.Game = function (Game) {};
  this.moveShip();
  this.collisionDetection();
  }
+ },
  //moves ship and fires bullet from keyboard controls
  moveship: function () {
  //if left arrow key pressed move players ship left
- if (cursors.left.isDown) {
  // Move to the left
+ if (cursors.left.isDown) {
+ ship.body.velocity.x = -200;
+ }
+ else if (cursors.right.isDown) {
+ ship.body.velocity.x = 200;
+ }
+ else {
+ ship.body.velocity.x = 0;
+ }
+ 
+  if (cursors.left.isDown) {
  ship.body.velocity.x = -200;
  }
  //if right arrow key pressed move players ship right
@@ -149,7 +160,7 @@ BasicGame.Game = function (Game) {};
  if (this.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR)) {
  this.fireBullet();
  }
- }
+ },
  //function executed during playing the game to create a UFO
  createUfo: function () {
  //Generate random number between 0 and 20
@@ -164,7 +175,7 @@ BasicGame.Game = function (Game) {};
  //Generating a random velocity
  ufo.body.velocity.y = this.rnd.integerInRange(200, 300);
  }
- }
+ },
  //function executed during playing the game to create a Life
   createLife: function () {
  //Generate random number between 0 and 500
@@ -178,7 +189,7 @@ BasicGame.Game = function (Game) {};
  //Generating a random velocity
  life.body.velocity.y = 150;
  }
- }
+ },
  //Generate bullet and position in the x axis, set the velocity and play the audio
  fireBullet: function () {
  if (this.time.now > nextFire && bullets.countDead() > 0) {
@@ -188,13 +199,13 @@ BasicGame.Game = function (Game) {};
  bullet.body.velocity.y = -400;
  bulletAudio.play();
  }
- }
+ },
  //function executed during playing the game to check for collisions
  collisionDetection: function() {
  this.physics.arcade.overlap(ship, ufos, this.collideUfo, null, this);
  this.physics.arcade.overlap(ship, lives, this.collectLife, null, this);
  this.physics.arcade.overlap(bullets, ufos, this.destroyUfo, null,this);
- }
+ },
  //function executed if there is collision between player and ufo. UFO is destroyed, animation & sound, reduce lifeTotal
  collideUfo: function (ship,ufo) {
  explosionAudio.play();
@@ -206,7 +217,7 @@ BasicGame.Game = function (Game) {};
  lifeTotalText.text = 'Lives: ' + lifeTotal;
  //
  gameOver=true;
- }
+ },
  //function executed if there is collision between ufo and bullet. UFO is destroyed, animation & sound, increase score
  destroyUfo: function (bullet, ufo) {
  explosionAudio.play();
@@ -217,7 +228,7 @@ BasicGame.Game = function (Game) {};
  animation.animations.play('explode', 30, false, true);
  score += 100;
  scoreText.text = 'Score: ' + score;
- }
+ },
  //function executed if there is collision between player and life.
 //Life is destroyed, animation & sound, increase lifeTotal
  collectLife: function (ship, life) {
@@ -227,12 +238,12 @@ BasicGame.Game = function (Game) {};
  var animation = this.add.sprite(life.body.x, life.body.y, 'lifeAnimation');
  animation.animations.add('lifeAnimation');
  animation.animations.play('lifeAnimation', 30, false, true);
- }
+ },
  //Updates timer and outputs to the screen
  updateTimer: function () {
  seconds++;
  timerText.text = 'Time: ' + seconds;
- }
+ },
  //function is executed when the game ends. Stops Ship, Kills all objects, stops timer, Display Restart Button
  gameOver: function () {
  ship.body.velocity.x = 0;
@@ -244,7 +255,7 @@ BasicGame.Game = function (Game) {};
  gameOverText.visible = true;
  restartButton.visible = true;
  timer.stop();
- }
+ },
  //Restart function, executed when restart button is pressed
  restartGame: function () {
  this.game.state.start('Game');
@@ -254,6 +265,5 @@ BasicGame.Game = function (Game) {};
  this.game.debug.bodyInfo(ship, 32, 100);
  this.game.debug.spriteBounds(ship);
  }
- }
- }
+ },
  };
