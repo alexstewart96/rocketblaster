@@ -261,11 +261,6 @@ var debugToggle;
  //Restart function, executed when restart button is pressed
  restartGame: function () {
  this.game.state.start('Game');
- function render () {
-
- // Sprite debug info
- this.game.debug.bodyInfo(ship, 32, 100);
- this.game.debug.spriteBounds(ship);
- }
+ 
  },
  };
