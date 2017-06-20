@@ -39,7 +39,7 @@ BasicGame.Game = function (Game) {};
  //Adding the starfield, logo onto the screen
  this.starfield = this.add.tileSprite(0, 0, 800, 600, 'starfield');
  //Adding the ship onto the screen, set the physics and the boundarys
- ship = this.add.sprite((this.world.width / 2), this.world.height -ship, '');
+ ship = this.add.sprite((this.world.width / 2), this.world.height - 50, 'ship' '');
  ship.anchor.setTo(0.5,0);
  this.physics.enable(ship, Phaser.Physics.ARCADE);
  ship.body.collideWorldBounds = true;
@@ -139,21 +139,11 @@ BasicGame.Game = function (Game) {};
  if (cursors.left.isDown) {
  ship.body.velocity.x = -200;
  }
+  //if right arrow key pressed move players ship right
  else if (cursors.right.isDown) {
  ship.body.velocity.x = 200;
  }
- else {
- ship.body.velocity.x = 0;
- }
- 
-  if (cursors.left.isDown) {
- ship.body.velocity.x = -200;
- }
- //if right arrow key pressed move players ship right
- else if (cursors.right.isDown) {
- ship.body.velocity.x = 200;
- }
- //else stop ship
+  //else stop ship
  else {
  ship.body.velocity.x = 0;
  }
@@ -260,11 +250,13 @@ BasicGame.Game = function (Game) {};
  //Restart function, executed when restart button is pressed
  restartGame: function () {
  this.game.state.start('Game');
-  function render () {
+ },
+  
+  //function render () {
 
  // Sprite debug info
- this.game.debug.bodyInfo(ship, 32, 100);
- this.game.debug.spriteBounds(ship);
- }
- },
+//this.game.debug.bodyInfo(ship, 32, 100);
+ //this.game.debug.spriteBounds(ship);
+ //}
+ 
  };
