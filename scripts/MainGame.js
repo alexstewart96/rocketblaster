@@ -31,8 +31,7 @@ BasicGame.Game = function (Game) {};
  var gameOverText; //Game Over message
  var restartButton; //Restart game button
  var gameOver;
-var showDebug = false;
-var debugToggle;
+
  BasicGame.Game.prototype = {
  create: function () {
  //Specifying the physics game engine to ARCADE
