@@ -258,5 +258,4 @@ BasicGame.Game = function (Game) {};
 //this.game.debug.bodyInfo(ship, 32, 100);
  //this.game.debug.spriteBounds(ship);
  //}
- }
  };
