@@ -164,7 +164,7 @@ BasicGame.Game = function (Game) {};
  var createufo = ufos.create(randomX, -50, 'ufo');
  this.physics.enable(ufos, Phaser.Physics.ARCADE);
  //Generating a random velocity
- ufo.body.velocity.y = this.rnd.integerInRange(200, 300);
+ ufos.body.velocity.y = this.rnd.integerInRange(200, 300);
  }
  },
  //function executed during playing the game to create a Life
