@@ -90,12 +90,12 @@ BasicGame.Game = function (Game) {};
  timer = this.time.create(false);
  seconds = 0;
  timerText.text = 'Time: ' + seconds;
- game.Over.Text = this.add.text,(this.world.centerX, this.world.centeY-50 );'Game Over', 
+ game.Over.Text = this.add.text,(this.world.centerX, this.world.centeY-50 ;'Game Over', 
  {
  font: '96px arial',
  fill: '#fff',
  align: 'center'
- };
+ });
  gameOverText.anchor.set(0.5);
  //hides the gameState text
  gameOverText.visible = false;
