@@ -133,7 +133,7 @@ BasicGame.Game = function (Game) {};
  }
  },
  //moves ship and fires bullet from keyboard controls
- moveship: function () {
+ moveShip: function () {
  //if left arrow key pressed move players ship left
  // Move to the left
  if (cursors.left.isDown) {
