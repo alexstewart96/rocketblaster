@@ -41,12 +41,12 @@ BasicGame.Game = function (Game) {};
  //Adding the ship onto the screen, set the physics and the boundarys
  ship = this.add.sprite((this.world.width / 2), this.world.height - 50, 'ship');
  ship.anchor.setTo(0.5.0);
- this.physics.enable(ship, Phaser.Physics.ARCADE);
+ this.physics.enable(ship.Phaser.Physics.ARCADE);
  ship.body.collideWorldBounds = true;
  //Creating Groups
  //Create the ufos group, set the physics and the boundarys
  ufos = this.add.group();
- this.physics.enable(ufos, Phaser.Physics.ARCADE);
+ this.physics.enable(ufos.Phaser.Physics.ARCADE);
  ufos.setAll('outOfBoundsKill', true);
  ufos.setAll('checkWorldBounds', true);
  ufos.setAll('anchor.x', 0.5);
@@ -258,5 +258,5 @@ BasicGame.Game = function (Game) {};
 this.game.debug.bodyInfo(ship, 32, 100);
  this.game.debug.spriteBounds(ship);
  }
- 
+ }
  };
