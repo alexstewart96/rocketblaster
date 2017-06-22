@@ -24,7 +24,7 @@ BasicGame.Game = function (Game) {};
  var explosionAudio;
  //Timer Variables stores information about the timer
  var seconds; //Number of seconds game has been running
- var timer = 60;
+ var timer;
  var timerText;
  //Misc Variables
  var cursors; //Keyboard control
@@ -82,13 +82,13 @@ BasicGame.Game = function (Game) {};
  //sets the lifeTotal to 3 and output to the screen
  lifeTotal = 3;
  lifeTotalText.text = 'Lives: ' + lifeTotal;
- timerText = this.add.text(350, 16, 'Time: 0', {
+ timerText = this.add.text(350, 16, 'Time: 60', {
  font: '32px arial',
  fill: '#fff',
  });
  //setup timer
  timer = this.time.create(false);
- seconds = 0;
+ seconds = 60;
  timerText.text = 'Time: ' + seconds;
  gameOverText = this.add.text(this.world.centerX, this.world.centeY-50, 'Game Over', 
  {
@@ -204,7 +204,7 @@ BasicGame.Game = function (Game) {};
  var animation = this.add.sprite(ufo.body.x, ufo.body.y, 'kaboom');
  animation.animations.add('explode');
  animation.animations.play('explode', 30, false, true);
- lifeTotal--;
+ lifeTotal-;
  lifeTotalText.text = 'Lives: ' + lifeTotal;
  //
  gameOver=true;
