@@ -24,7 +24,7 @@ BasicGame.Game = function (Game) {};
  var explosionAudio;
  //Timer Variables stores information about the timer
  var seconds; //Number of seconds game has been running
- var timer;
+ var timer = 60;
  var timerText;
  //Misc Variables
  var cursors; //Keyboard control
@@ -200,7 +200,7 @@ BasicGame.Game = function (Game) {};
  //function executed if there is collision between player and ufo. UFO is destroyed, animation & sound, reduce lifeTotal
  collideUfo: function (ship,ufo) {
  explosionAudio.play();
- ufos.kill();
+ ufo.kill();
  var animation = this.add.sprite(ufo.body.x, ufo.body.y, 'kaboom');
  animation.animations.add('explode');
  animation.animations.play('explode', 30, false, true);
@@ -233,7 +233,7 @@ BasicGame.Game = function (Game) {};
  //Updates timer and outputs to the screen
  updateTimer: function () {
  seconds++;
- timerText.text = 'Time: ' + seconds;
+ timerText.text = 'Time: ' - seconds;
  },
  //function is executed when the game ends. Stops Ship, Kills all objects, stops timer, Display Restart Button
  gameOver: function () {
