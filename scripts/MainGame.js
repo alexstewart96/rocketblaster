@@ -88,8 +88,8 @@ BasicGame.Game = function (Game) {};
  });
  //setup timer
  timer = this.time.create(false);
- seconds = 60;
- timerText.text = 'Time: ' - seconds;
+ seconds = 0;
+ timerText.text = 'Time: ' + seconds;
  gameOverText = this.add.text(this.world.centerX, this.world.centeY-50, 'Game Over', 
  {
  font: '96px arial',
