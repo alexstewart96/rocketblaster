@@ -161,10 +161,10 @@ BasicGame.Game = function (Game) {};
  //Generating random position in the X Axis
  var randomX = this.rnd.integerInRange(0, this.world.width - 150);
  //Creating a ufo from the the ufos group and setting physics
- var createufo = ufos.create(randomX, -50, 'ufos');
+ var ufo = ufos.create(randomX, -50, 'ufo');
  this.physics.enable(ufos, Phaser.Physics.ARCADE);
  //Generating a random velocity
- ufos.body.velocity.y = this.rnd.integerInRange(200, 300);
+ ufo.body.velocity.y = this.rnd.integerInRange(200, 300);
  }
  },
  //function executed during playing the game to create a Life
