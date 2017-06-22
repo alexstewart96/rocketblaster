@@ -204,7 +204,7 @@ BasicGame.Game = function (Game) {};
  var animation = this.add.sprite(ufo.body.x, ufo.body.y, 'kaboom');
  animation.animations.add('explode');
  animation.animations.play('explode', 30, false, true);
- lifeTotal- 1;
+ lifeTotal--;
  lifeTotalText.text = 'Lives: ' + lifeTotal;
  //
  if (lifeTotal === 0){
