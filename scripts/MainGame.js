@@ -82,7 +82,7 @@ BasicGame.Game = function (Game) {};
  //sets the lifeTotal to 3 and output to the screen
  lifeTotal = 3;
  lifeTotalText.text = 'Lives: ' + lifeTotal;
- timerText = this.add.text(350, 16, 'Time: 60', {
+ timerText = this.add.text(350, 16, 'Time: 0', {
  font: '32px arial',
  fill: '#fff',
  });
