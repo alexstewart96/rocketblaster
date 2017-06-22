@@ -27,7 +27,7 @@ BasicGame.Preloader.prototype = {
   this.load.image('bullet', 'assets/bullet.png');
   this.load.spritesheet('kaboom', 'assets/explode.png', 128, 128, 16);
 this.load.spritesheet('lifeAnimation', 'assets/lifeAnimation.png',100, 100, 4);
- this.load.audio('music', ['assets/spacesound.mp3', 'assets/start game.mp3']);
+ this.load.audio('music', ['assets/spacesound.mp3', 'assets/music.mp3']);
  this.load.audio('bullet', ['assets/SoundEffectLaser.mp3']);
  this.load.audio('explosion', ['assets/explosion.mp3']);		
 	},
