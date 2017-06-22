@@ -90,7 +90,7 @@ BasicGame.Game = function (Game) {};
  timer = this.time.create(false);
  seconds = 60;
  timerText.text = 'Time: ' + seconds;
- gameOverText = this.add.text(this.world.centerX, this.world.centeY-50, 'Game Over', 
+ gameOverText = this.add.text(this.world.centerX, this.world.centerY, 'Game Over', 
  {
  font: '96px arial',
  fill: '#fff',
