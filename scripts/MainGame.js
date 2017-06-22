@@ -88,8 +88,8 @@ BasicGame.Game = function (Game) {};
  });
  //setup timer
  timer = this.time.create(false);
- seconds = 0;
- timerText.text = 'Time: ' + seconds;
+ seconds = 60;
+ timerText.text = 'Time: ' - seconds;
  gameOverText = this.add.text(this.world.centerX, this.world.centeY-50, 'Game Over', 
  {
  font: '96px arial',
@@ -234,8 +234,8 @@ BasicGame.Game = function (Game) {};
  },
  //Updates timer and outputs to the screen
  updateTimer: function () {
- seconds++;
- timerText.text = 'Time: ' + seconds;
+ seconds--;
+ timerText.text = 'Time: ' - seconds;
  },
  //function is executed when the game ends. Stops Ship, Kills all objects, stops timer, Display Restart Button
  gameOver: function () {
