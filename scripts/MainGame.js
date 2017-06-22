@@ -235,7 +235,7 @@ BasicGame.Game = function (Game) {};
  //Updates timer and outputs to the screen
  updateTimer: function () {
  seconds++;
- timerText.text = 'Time: ' - seconds;
+ timerText.text = 'Time: ' + seconds;
  },
  //function is executed when the game ends. Stops Ship, Kills all objects, stops timer, Display Restart Button
  gameOver: function () {
