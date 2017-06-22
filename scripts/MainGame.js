@@ -204,10 +204,12 @@ BasicGame.Game = function (Game) {};
  var animation = this.add.sprite(ufo.body.x, ufo.body.y, 'kaboom');
  animation.animations.add('explode');
  animation.animations.play('explode', 30, false, true);
- lifeTotal--;
+ lifeTotal- 1;
  lifeTotalText.text = 'Lives: ' + lifeTotal;
  //
+ if (lifeTotal === 0){
  gameOver=true;
+ }
  },
  //function executed if there is collision between ufo and bullet. UFO is destroyed, animation & sound, increase score
  destroyUfo: function (bullet, ufo) {
