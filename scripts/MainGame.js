@@ -89,7 +89,7 @@ BasicGame.Game = function (Game) {};
  //setup timer
  timer = this.time.create(false);
  seconds = 30;
- timerText.text = 'Time: ' + seconds;
+ timerText.text = 'Time: ' - seconds;
  gameOverText = this.add.text(this.world.centerX, this.world.centeY-50, 'Game Over', 
  {
  font: '96px arial',
@@ -121,7 +121,7 @@ BasicGame.Game = function (Game) {};
  //Scroll the background
  this.starfield.tilePosition.y += 2;
  //if lifeTotal is less than 1 or seconds = 60 or gameOver variable= true then execute 'truegameOver' function
- if (lifeTotal < 1 || seconds == 60 || gameOver===true) {
+ if (lifeTotal < 1 || seconds == 0 || gameOver===true) {
  this.gameOver();
  }
  //else execute;'createUfo','createLife','moveShip','collisionDetection';
