@@ -1,4 +1,4 @@
-var = BasicGame {};
+var BasicGame {};
 
 BasicGame.Game = function (Game) {};
 
