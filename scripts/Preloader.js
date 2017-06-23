@@ -1,5 +1,5 @@
 var BasicGame = {};
-
+//vsriable basicgame declared
 BasicGame.Preloader = function (game) {
 	this.ready = false;
 };
@@ -27,6 +27,7 @@ BasicGame.Preloader.prototype = {
   this.load.image('bullet', 'assets/bullet.png');
   this.load.spritesheet('kaboom', 'assets/explode.png', 128, 128, 16);
 this.load.spritesheet('lifeAnimation', 'assets/lifeAnimation.png',100, 100, 4);
+		//audio for sound effects and maingame music
  this.load.audio('music', ['assets/music.m4a', 'assets/music.mp3']);
  this.load.audio('bullet', ['assets/SoundEffectLaser.mp3']);
  this.load.audio('explosion', ['assets/explosion.mp3']);		
