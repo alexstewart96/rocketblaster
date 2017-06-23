@@ -5,7 +5,7 @@ BasicGame.Game = function (Game) {};
 
 
  //Graphical Object
-
+// variables for graphic items
  var ship;
  var ufos; //Group of Enemy UFOs which drop from the top of the screen
  var lives; //Group of Lives which are collected
@@ -31,7 +31,7 @@ BasicGame.Game = function (Game) {};
  var gameOverText; //Game Over message
  var restartButton; //Restart game button
  var gameOver;
-
+//game building part
  BasicGame.Game.prototype = {
  create: function () {
  //Specifying the physics game engine to ARCADE
@@ -117,6 +117,7 @@ BasicGame.Game = function (Game) {};
  timer.loop(1000, this.updateTimer, this);
  timer.start();
  },
+  //update function begins
  update: function () {
  //Scroll the background
  this.starfield.tilePosition.y += 2;
