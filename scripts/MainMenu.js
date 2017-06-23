@@ -1,7 +1,7 @@
 
 
 BasicGame.MainMenu = function (game) { };
-
+//mainmenu variables
 var startButton;
 var starfield;
 var logo;
@@ -25,7 +25,7 @@ startButton.anchor.setTo(0.5,0.5);
 	update: function () {
 		//	Do some nice funky main menu effect here
 	},
-
+//this will start the game
 	startGame: function () {
 		//and start the actual game
 		this.game.state.start('Game');
