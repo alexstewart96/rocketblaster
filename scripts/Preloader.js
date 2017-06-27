@@ -30,7 +30,9 @@ this.load.spritesheet('lifeAnimation', 'assets/lifeAnimation.png',100, 100, 4);
 		//audio for sound effects and maingame music
  this.load.audio('music', ['assets/music.m4a', 'assets/music.mp3']);
  this.load.audio('bullet', ['assets/SoundEffectLaser.mp3']);
- this.load.audio('explosion', ['assets/explosion.mp3']);		
+ this.load.audio('explosion', ['assets/explosion.mp3']);
+	var str = "game manual/guide";
+var result = str.link("https://drive.google.com/file/d/0B6sG2hs1pWJiREJtMUJKYUt3RGM/view");	
 	},
 
 	create: function () {
